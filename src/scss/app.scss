@@ -8,13 +8,15 @@ $btn-height: 44px;
 // Header
 .header{
     display: grid;
-    grid-template-areas: "header-logo header-menu header-icons";
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas: "header-menu header-logo header-icons";
+    grid-template-columns: 1fr 1fr 1fr;
     .header__logo{
         grid-area: header-logo;
+        width: 100%;
     }
     .header__menu{
         grid-area: header-menu;
+        width: fit-content;
     }
     .header__icons{
         grid-area: header-icons;
