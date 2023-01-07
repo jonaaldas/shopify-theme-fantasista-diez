@@ -14,12 +14,12 @@
   }
 {%- endstyle -%}
 <div id="hero" class="relative flex justify-center items-center h-screen">
-  <div class="relative w-full text-center banner__content banner__content--{{ section.settings.desktop_content_position }} page-width">
+  <div class="relative w-full text-{{section.settings.aligment_text_block}} banner__content banner__content--{{ section.settings.desktop_content_position }} page-width">
     <div>
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when 'heading' -%}
-          <h2 class="{% if block.settings.heading_size == 'medium' %}text-2xl{% else %}text-3xl{% endif %}" {{ block.shopify_attributes }}>
+          <h2 class="text-white {% if block.settings.heading_size == 'medium' %}text-3xl{% else %}text-6xl{% endif %}" {{ block.shopify_attributes }}>
             <span>{{ block.settings.heading | escape }}</span>
           </h2>
           {%- when 'text' -%}
@@ -56,6 +56,24 @@
         "unit": "%",
         "label": "t:sections.image-banner.settings.image_overlay_opacity.label",
         "default": 0
+      }, {
+        "type": "select",
+        "id": "aligment_text_block",
+        "label": "Aligment Text Block",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          }, {
+            "value": "right",
+            "label": "Right"
+          }, {
+            "value": "center",
+            "label": "Center"
+          }
+        ],
+        "default": "center",
+        "label": "Center"
       }
     ],
     "blocks": [
